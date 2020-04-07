@@ -1,0 +1,26 @@
+version: '3'
+services:
+  
+  habit_db:
+    image: postgis/postgis:12-3.0-alpine
+    container_name: habit_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: development_password
+
+  habit_app:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    image: habit_app
+    container_name: habit_app
+    environment:
+      RAILS_ENV: development
+    volumes:
+      - ..:/home/user/app
+    ports:
+      - "3000:3000"
+      - "5678:5678"
+    depends_on:
+      - habit_db
+   

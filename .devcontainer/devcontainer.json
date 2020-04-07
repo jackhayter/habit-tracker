@@ -1,0 +1,29 @@
+{
+  "dockerComposeFile": "../docker/docker-compose.yml",
+  "service": "habit_app",
+  "settings": {
+    "solargraph.useBundler": true,
+    "solargraph.bundlerPath": "/usr/local/bundle/bin/bundle",
+    "ruby.useBundler": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      100
+    ],
+    "editor.tabSize": 2,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate"
+  },
+  "runArgs": [
+    "-u",
+    1000
+  ],
+  "workspaceFolder": "/home/user/app",
+  "extensions": [
+    "rebornix.Ruby",
+    "craigmaslowski.erb",
+    "castwide.solargraph",
+    "misogi.ruby-rubocop",
+    "wingrunr21.vscode-ruby"
+  ]
+}

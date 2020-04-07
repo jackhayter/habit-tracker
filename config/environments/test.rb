@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
 # your test database is "scratch space" for the test suite and is wiped
@@ -45,4 +47,8 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
+
+  config.credentials.content_path = Rails.root.join('config', 'credentials', 'test.yml.enc')
+  config.credentials.key_path = Rails.root.join('config', 'credentials', 'test.key')
+  config.require_master_key = true
 end
