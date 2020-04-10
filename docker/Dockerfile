@@ -6,7 +6,7 @@ RUN apk --update add \
   tzdata build-base \
   postgresql-client postgresql-dev \
   libxml2 libxslt \
-  git imagemagick imagemagick-dev \
+  git \
   gdbm musl ruby-dbm gdbm-dev \
   nodejs npm \
   && gem update --system \

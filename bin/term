@@ -1,4 +1,4 @@
 #!/bin/bash
 
-CONTAINER=$(docker ps | grep 'indietut_app' | tail -n 1 | cut -d' ' -f1)
+CONTAINER=$(docker ps | grep 'habit_app' | tail -n 1 | cut -d' ' -f1)
 docker exec -it $CONTAINER ash
