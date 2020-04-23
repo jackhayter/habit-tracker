@@ -12,7 +12,13 @@
     "editor.tabSize": 2,
     "ruby.codeCompletion": "rcodetools",
     "ruby.format": "rubocop",
-    "ruby.intellisense": "rubyLocate"
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true, // use the internal language server (see below)
+    "ruby.lint": {
+      "rubocop": {
+        "useBundler": true // enable rubocop via bundler
+      }
+    },
   },
   "runArgs": [
     "-u",
