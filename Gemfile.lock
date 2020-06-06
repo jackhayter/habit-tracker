@@ -224,6 +224,8 @@ GEM
     valid_email2 (3.2.2)
       activemodel (>= 3.2)
       mail (~> 2.5)
+    view_component (2.7.0)
+      activesupport (>= 5.0.0, < 7.0)
     web-console (4.0.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -239,7 +241,7 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     yard (0.9.24)
@@ -269,6 +271,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   valid_email2
+  view_component
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
