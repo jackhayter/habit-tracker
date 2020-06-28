@@ -1,0 +1,25 @@
+<%= form_with model: @login_form, url: login_path do |form|%>
+
+  <% if @login_form.errors %>
+    <div class="alert alert-danger">
+      <% if @login_form.errors[:base].present? %>
+        <%= @login_form.errors[:base].join(', ').humanize %>
+      <% else %>
+        Please correct the errors below and try again
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :email_address %>
+    <%= form.email_field :email_address, class: @login_form.class_for(:email_address), required: true %>
+    <%= field_errors(@login_form.errors_for(:email_address)) %>
+  </div>
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: @login_form.class_for(:password), required: true %>
+    <%= field_errors(@login_form.errors_for(:password)) %>
+  </div>
+  <%= form.submit 'Sign In', class: 'btn btn-primary' %>
+
+<% end %>
