@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Manages the different grades that can be assigned to entries in a tracker
+#
 class GradesController < ApplicationController
 
   before_action do

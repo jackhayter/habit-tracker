@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Manages trackers created by users
+#
 class TrackersController < ApplicationController
 
   before_action do

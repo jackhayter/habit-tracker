@@ -1,7 +1,9 @@
 AllCops:
   TargetRubyVersion: 2.6.5
   Exclude:
-  - 'db/migrate/*'
+    - "bin/*"
+    - "db/**/*"
+    - "node_modules/**/*"
 
 Metrics/MethodLength:
   Max: 15
@@ -14,7 +16,7 @@ Layout/EmptyLinesAroundBlockBody:
 
 Layout/EmptyLinesAroundMethodBody:
   Enabled: false
-  
+
 Layout/EmptyLinesAroundBeginBody:
   Enabled: false
 
@@ -50,3 +52,30 @@ Lint/RaiseException:
 
 Lint/StructNewOverride:
   Enabled: false
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true

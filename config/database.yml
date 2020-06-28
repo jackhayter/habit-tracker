@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  host: habit_db
-  username: postgres
-  password: development_password
+  host: localhost
+  username:
+  password:
   database: habit_development

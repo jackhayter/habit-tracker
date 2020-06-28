@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_07_233255) do
+ActiveRecord::Schema.define(version: 2020_06_28_030844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "email_addresses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.uuid "user_id", null: false
+    t.string "address", null: false
+    t.uuid "verification_token", null: false
+    t.datetime "verified_at"
+    t.boolean "default", default: false, null: false
+    t.index ["address"], name: "index_email_addresses_on_address", unique: true, where: "(verified_at IS NOT NULL)"
+    t.index ["user_id", "default"], name: "index_email_addresses_on_user_id_and_default", unique: true
+    t.index ["user_id"], name: "index_email_addresses_on_user_id"
+  end
 
   create_table "entries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.date "date", null: false
@@ -46,14 +59,11 @@ ActiveRecord::Schema.define(version: 2020_04_07_233255) do
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "email_address", null: false
     t.string "password_digest", null: false
     t.string "name", null: false
-    t.uuid "verification_token", null: false
-    t.datetime "verified_at"
-    t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "email_addresses", "users"
   add_foreign_key "entries", "grades"
   add_foreign_key "entries", "trackers"
   add_foreign_key "grades", "trackers"

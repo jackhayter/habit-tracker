@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# Allows users to sign up and manage their accounts
+#
 class UsersController < ApplicationController
 
   def new
